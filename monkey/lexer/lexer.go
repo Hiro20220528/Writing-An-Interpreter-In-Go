@@ -1,7 +1,6 @@
 package lexer
 
 import (
-	"fmt"
 	"monkey/token"
 )
 
@@ -14,12 +13,12 @@ type Lexer struct {
 
 func New(input string) *Lexer {
 	l := &Lexer{input: input}
-	fmt.Println("-------------------")
-	fmt.Println(l.input)
-	fmt.Println(l.position)
-	fmt.Println(l.readPosition)
-	fmt.Println(l.ch)
-	fmt.Println("-------------------")
+	// fmt.Println("-------------------")
+	// fmt.Println(l.input)
+	// fmt.Println(l.position)
+	// fmt.Println(l.readPosition)
+	// fmt.Println(l.ch)
+	// fmt.Println("-------------------")
 	l.readChar()
 	return l
 }
@@ -28,7 +27,7 @@ func (l *Lexer) readChar() {
 	if l.readPosition >= len(l.input) {
 		l.ch = 0
 	} else {
-		fmt.Println("l.input[l.readPosition]: ", l.input[l.readPosition])
+		// fmt.Println("l.input[l.readPosition]: ", l.input[l.readPosition])
 		l.ch = l.input[l.readPosition]
 	}
 	l.position = l.readPosition
@@ -40,7 +39,7 @@ func (l *Lexer) NextToken() token.Token {
 
 	l.skipWhitespace()
 
-	fmt.Println("l.ch: ", l.ch)
+	// fmt.Println("l.ch: ", l.ch)
 	switch l.ch {
 	case '=':
 		if l.peekChar() == '=' {
