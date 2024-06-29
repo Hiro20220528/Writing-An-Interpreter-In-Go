@@ -13,12 +13,6 @@ type Lexer struct {
 
 func New(input string) *Lexer {
 	l := &Lexer{input: input}
-	// fmt.Println("-------------------")
-	// fmt.Println(l.input)
-	// fmt.Println(l.position)
-	// fmt.Println(l.readPosition)
-	// fmt.Println(l.ch)
-	// fmt.Println("-------------------")
 	l.readChar()
 	return l
 }
@@ -27,7 +21,6 @@ func (l *Lexer) readChar() {
 	if l.readPosition >= len(l.input) {
 		l.ch = 0
 	} else {
-		// fmt.Println("l.input[l.readPosition]: ", l.input[l.readPosition])
 		l.ch = l.input[l.readPosition]
 	}
 	l.position = l.readPosition
