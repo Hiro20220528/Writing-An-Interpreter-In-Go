@@ -31,7 +31,7 @@ func TestLetStatements(t *testing.T) {
 	}{
 		{"x"},
 		{"y"},
-		{"footbar"},
+		{"foobar"},
 	}
 
 	for i, tt := range tests {
@@ -49,6 +49,7 @@ func testLetStatements(t *testing.T, s ast.Statement, name string) bool {
 	}
 
 	letStmt, ok := s.(*ast.LetStatement)
+
 	if !ok {
 		t.Errorf("s not *ast.Statement. got=%T", s)
 		return false
