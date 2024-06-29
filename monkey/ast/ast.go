@@ -4,6 +4,11 @@ import (
 	"monkey/token"
 )
 
+/*
+ AST (Abstract Syntax Tree) is a tree representation of the structure of the source code.
+ 抽象構文木（AST）は、ソースコードの構造の木表現です。
+*/
+
 type Node interface {
 	TokenLiteral() string
 }
